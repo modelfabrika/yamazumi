@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montaj Hattı Üretim Durumu</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(to right, #ff512f, #dd2476);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .production-status {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container {
+            margin-top: 40px;
+        }
+
+        .video-container iframe {
+            width: 90%;
+            height: 500px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Montaj Hattı</h1>
+
+    <!-- İstasyonlar için Butonlar -->
+    <div class="container">
+        <button class="button" onclick="changeProductionStatus('Ön Montaj: Çalışma Süreci', 'https://drive.google.com/file/d/17K6y8h2U5vHX0TCqfB6C85RC9rCRovlN/preview')">Ön Montaj</button>
+        <button class="button" onclick="changeProductionStatus('D25 Montaj: Çalışma Süreci', 'https://drive.google.com/file/d/1GbsJkr5swoBy6yhrYava39jlJk7ipvic/preview')">D25 Montaj</button>
+        <button class="button" onclick="changeProductionStatus('D40 Montaj: Çalışma Süreci', 'https://drive.google.com/file/d/1nvm4eO_iS84YbMwoy4l41eURxOtkZpeQ/preview')">D40 Montaj</button>
+        <button class="button" onclick="changeProductionStatus('Fonksiyonel Test: Çalışma Süreci', 'https://drive.google.com/file/d/1GyGejBBU4d2X9JTdaSrCowPnaXFaudPW/preview')">Fonksiyonel Test</button>
+        <button class="button" onclick="changeProductionStatus('Paketleme: Çalışma Süreci', 'https://drive.google.com/file/d/1bOqT4hAflvB0ALhmYnpr5_q-7jAHCj9B/preview')">Paketleme</button>
+    </div>
+
+    <!-- Üretim Durumu Gösterimi -->
+    <div class="production-status" id="status">Üretim durumunu seçiniz.</div>
+
+    <!-- Video Linki -->
+    <div class="video-container">
+        <iframe id="video" src="" allow="autoplay" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function changeProductionStatus(status, videoUrl) {
+            // Üretim durumu metnini güncelle
+            document.getElementById('status').innerText = status;
+
+            // Video bağlantısını güncelle
+            const videoFrame = document.getElementById('video');
+            videoFrame.src = videoUrl;
+        }
+    </script>
+
+</body>
+</html>
