@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Montaj Hattı Üretim Durumu</title>
+
 <style>
 body {
     font-family: 'Roboto', Arial, sans-serif;
@@ -14,6 +15,7 @@ body {
     margin: 0;
     min-height: 100vh;
 }
+
 h1 {
     font-size: 36px;
     font-weight: 700;
@@ -21,6 +23,7 @@ h1 {
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
+
 .container {
     display: flex;
     justify-content: center;
@@ -28,6 +31,7 @@ h1 {
     gap: 15px;
     margin-bottom: 30px;
 }
+
 .button {
     padding: 15px 25px;
     border: none;
@@ -41,28 +45,32 @@ h1 {
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
+
 .button:hover {
     background: linear-gradient(to right, #ff7e5f, #feb47b);
     transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.3);
 }
+
 .production-status {
     margin-top: 20px;
     font-size: 22px;
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
+
 .video-container {
+    margin-top: 40px;
+}
+
+.video-container iframe {
     width: 90%;
     max-width: 900px;
-    margin: 40px auto 0;
-    background: #000;
-    border-radius: 10px;
-    overflow: hidden;
-}
-video {
-    width: 100%;
-    height: auto;
-    display: block;
+    height: 500px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    background-color: #000;
 }
 </style>
 </head>
@@ -71,28 +79,35 @@ video {
 <h1>Montaj Hattı</h1>
 
 <div class="container">
-    <button class="button" onclick="changeProductionStatus('Ön Montaj: Çalışma Süreci', 'https://drive.google.com/file/d/1CMi60ST65J54WspAQtDKjYzYDHeFgYay/preview')">
+    <button class="button"
+        onclick="changeProductionStatus('Ön Montaj: Çalışma Süreci', 'https://drive.google.com/file/d/1CMi60ST65J54WspAQtDKjYzYDHeFgYay/preview')">
         Ön Montaj
     </button>
 
-    <button class="button" onclick="changeProductionStatus('D25 Montaj: Çalışma Süreci', 'https://drive.google.com/file/d/1yqFjz64QKsVZ1Cf01U6rosSS2E4RgLad/preview')">
+    <button class="button"
+        onclick="changeProductionStatus('D25 Montaj: Çalışma Süreci', 'https://drive.google.com/file/d/1yqFjz64QKsVZ1Cf01U6rosSS2E4RgLad/preview')">
         D25 Montaj
     </button>
 
-    <button class="button" onclick="changeProductionStatus('D40 Montaj: Çalışma Süreci', 'https://drive.google.com/file/d/1RE4bYT_C_FQ5Icu_vGrAag9BVSwzAVp4/preview')">
+    <button class="button"
+        onclick="changeProductionStatus('D40 Montaj: Çalışma Süreci', 'https://drive.google.com/file/d/1RE4bYT_C_FQ5Icu_vGrAag9BVSwzAVp4/preview')">
         D40 Montaj
     </button>
 
-    <button class="button" onclick="changeProductionStatus('Fonksiyonel Test: Çalışma Süreci', 'https://drive.google.com/file/d/1xORKGbLpwLmMS3UUQX_kHJ88Eg_RF0vr/preview')">
+    <button class="button"
+        onclick="changeProductionStatus('Fonksiyonel Test: Çalışma Süreci', 'https://drive.google.com/file/d/1xORKGbLpwLmMS3UUQX_kHJ88Eg_RF0vr/preview')">
         Fonksiyonel Test
     </button>
 
-    <button class="button" onclick="changeProductionStatus('Paketleme: Çalışma Süreci', 'https://drive.google.com/file/d/1MsMxUa4_q-oPA0C8slAr7l6larjdyVWN/preview')">
+    <button class="button"
+        onclick="changeProductionStatus('Paketleme: Çalışma Süreci', 'https://drive.google.com/file/d/1MsMxUa4_q-oPA0C8slAr7l6larjdyVWN/preview')">
         Paketleme
     </button>
 </div>
 
-<div class="production-status" id="status">Üretim durumunu seçiniz.</div>
+<div class="production-status" id="status">
+    Üretim durumunu seçiniz.
+</div>
 
 <div class="video-container">
     <iframe id="video" allow="autoplay" allowfullscreen></iframe>
@@ -101,8 +116,7 @@ video {
 <script>
 function changeProductionStatus(status, videoUrl) {
     document.getElementById("status").innerText = status;
-    const videoFrame = document.getElementById("video");
-    videoFrame.src = videoUrl;
+    document.getElementById("video").src = videoUrl;
 }
 </script>
 
