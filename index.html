@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,30 +59,43 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
+        /* Video container */
         .video-container {
             margin-top: 40px;
+            width: 80%; /* Video genişliğini sınırlıyoruz */
+            max-width: 900px; /* Maksimum genişlik sınırı */
+            height: auto;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            background-color: #000; /* Video dışındaki alanın arka plan rengi */
+            margin: 0 auto; /* Ortalamak için */
         }
 
+        /* Aspect ratio for video */
         .video-container iframe {
-            width: 90%;
-            height: 500px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             border: none;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
+
     </style>
 </head>
-<body>
 
+<body>
     <h1>Montaj Hattı</h1>
 
     <!-- İstasyonlar için Butonlar -->
     <div class="container">
         <button class="button" onclick="changeProductionStatus('Ön Montaj: Çalışma Süreci', 'https://drive.google.com/file/d/1CMi60ST65J54WspAQtDKjYzYDHeFgYay/view?usp=sharing')">Ön Montaj</button>
-        <button class="button" onclick="changeProductionStatus('D25 Montaj: Çalışma Süreci', 'https://drive.google.com/file/d/1GbsJkr5swoBy6yhrYava39jlJk7ipvic/preview')">D25 Montaj</button>
-        <button class="button" onclick="changeProductionStatus('D40 Montaj: Çalışma Süreci', 'https://drive.google.com/file/d/1nvm4eO_iS84YbMwoy4l41eURxOtkZpeQ/preview')">D40 Montaj</button>
-        <button class="button" onclick="changeProductionStatus('Fonksiyonel Test: Çalışma Süreci', 'https://drive.google.com/file/d/1GyGejBBU4d2X9JTdaSrCowPnaXFaudPW/preview')">Fonksiyonel Test</button>
-        <button class="button" onclick="changeProductionStatus('Paketleme: Çalışma Süreci', 'https://drive.google.com/file/d/1bOqT4hAflvB0ALhmYnpr5_q-7jAHCj9B/preview')">Paketleme</button>
+        <button class="button" onclick="changeProductionStatus('D25 Montaj: Çalışma Süreci', 'https://drive.google.com/file/d/1yqFjz64QKsVZ1Cf01U6rosSS2E4RgLad/view?usp=sharing')">D25 Montaj</button>
+        <button class="button" onclick="changeProductionStatus('D40 Montaj: Çalışma Süreci', 'https://drive.google.com/file/d/1RE4bYT_C_FQ5Icu_vGrAag9BVSwzAVp4/view?usp=sharing')">D40 Montaj</button>
+        <button class="button" onclick="changeProductionStatus('Fonksiyonel Test: Çalışma Süreci', 'https://drive.google.com/file/d/1xORKGbLpwLmMS3UUQX_kHJ88Eg_RF0vr/view?usp=sharing')">Fonksiyonel Test</button>
+        <button class="button" onclick="changeProductionStatus('Paketleme: Çalışma Süreci', 'https://drive.google.com/file/d/1MsMxUa4_q-oPA0C8slAr7l6larjdyVWN/view?usp=sharing')">Paketleme</button>
     </div>
 
     <!-- Üretim Durumu Gösterimi -->
@@ -103,7 +116,6 @@
             videoFrame.src = videoUrl;
         }
     </script>
-
 </body>
-</html>
 
+</html>
