@@ -58,18 +58,16 @@
         }
 
         .video-container {
-            width: 90%;
-            max-width: 900px;
-            margin: 40px auto 0;
-            background: #000;
-            border-radius: 10px;
-            overflow: hidden;
+            margin-top: 40px;
         }
 
-        video {
-            width: 100%;
-            height: auto;
-            display: block;
+        iframe {
+            width: 90%;
+            max-width: 900px;
+            height: 500px;
+            border: none;
+            border-radius: 10px;
+            background: #000;
         }
     </style>
 </head>
@@ -80,34 +78,43 @@
 
 <div class="container">
     <button class="button"
-        onclick="changeProductionStatus('Ön Montaj: Çalışma Süreci', 'videos/on-montaj.mp4')">
+        onclick="changeProductionStatus(
+            'Ön Montaj: Çalışma Süreci',
+            'https://drive.google.com/file/d/17K6y8h2U5vHX0TCqfB6C85RC9rCRovlN/preview'
+        )">
         Ön Montaj
     </button>
 
-    <!-- 🔧 D25 DÜZELTİLDİ -->
+    <!-- ✅ D25 DOĞRU -->
     <button class="button"
         onclick="changeProductionStatus(
             'D25 Montaj: Çalışma Süreci',
-            'https://drive.google.com/uc?export=download&id=1yqFjz64QKsVZ1Cf01U6rosSS2E4RgLad'
+            'https://drive.google.com/file/d/1yqFjz64QKsVZ1Cf01U6rosSS2E4RgLad/preview'
         )">
         D25 Montaj
     </button>
 
     <button class="button"
-        onclick="changeProductionStatus('D40 Montaj: Çalışma Süreci', 'videos/d40-montaj.mp4')">
+        onclick="changeProductionStatus(
+            'D40 Montaj: Çalışma Süreci',
+            'https://drive.google.com/file/d/1nvm4eO_iS84YbMwoy4l41eURxOtkZpeQ/preview'
+        )">
         D40 Montaj
     </button>
 
     <button class="button"
-        onclick="changeProductionStatus('Fonksiyonel Test: Çalışma Süreci', 'videos/fonksiyonel-test.mp4')">
+        onclick="changeProductionStatus(
+            'Fonksiyonel Test: Çalışma Süreci',
+            'https://drive.google.com/file/d/1GyGejBBU4d2X9JTdaSrCowPnaXFaudPW/preview'
+        )">
         Fonksiyonel Test
     </button>
 
-    <!-- 🔧 PAKETLEME DÜZELTİLDİ -->
+    <!-- ✅ PAKETLEME DOĞRU -->
     <button class="button"
         onclick="changeProductionStatus(
             'Paketleme: Çalışma Süreci',
-            'https://drive.google.com/uc?export=download&id=1MsMxUa4_q-oPA0C8slAr7l6larjdyVWN'
+            'https://drive.google.com/file/d/1MsMxUa4_q-oPA0C8slAr7l6larjdyVWN/preview'
         )">
         Paketleme
     </button>
@@ -118,17 +125,13 @@
 </div>
 
 <div class="video-container">
-    <video id="video" controls autoplay muted></video>
+    <iframe id="video" allow="autoplay" allowfullscreen></iframe>
 </div>
 
 <script>
     function changeProductionStatus(status, videoUrl) {
         document.getElementById("status").innerText = status;
-
-        const video = document.getElementById("video");
-        video.src = videoUrl;
-        video.load();
-        video.play();
+        document.getElementById("video").src = videoUrl;
     }
 </script>
 
