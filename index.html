@@ -57,13 +57,13 @@
             font-weight: bold;
         }
 
-        /* 🔧 VIDEO SORUNUNU KÖKTEN ÇÖZEN KISIM */
+        /* video alanı – küçülme sorunu çözülmüş */
         .video-container {
             position: relative;
             width: 90%;
             max-width: 900px;
             margin: 40px auto 0;
-            padding-top: 56.25%; /* 16:9 oran */
+            padding-top: 56.25%; /* 16:9 */
             background: #000;
             border-radius: 10px;
             overflow: hidden;
@@ -85,14 +85,16 @@
 <h1>Montaj Hattı</h1>
 
 <div class="container">
+    <!-- ÖN MONTAJ -->
     <button class="button"
         onclick="changeProductionStatus(
             'Ön Montaj: Çalışma Süreci',
-            'https://drive.google.com/file/d/17K6y8h2U5vHX0TCqfB6C85RC9rCRovlN/preview'
+            'https://drive.google.com/file/d/1CMi60ST65J54WspAQtDKjYzYDHeFgYay/preview'
         )">
         Ön Montaj
     </button>
 
+    <!-- D25 -->
     <button class="button"
         onclick="changeProductionStatus(
             'D25 Montaj: Çalışma Süreci',
@@ -101,22 +103,25 @@
         D25 Montaj
     </button>
 
+    <!-- D40 -->
     <button class="button"
         onclick="changeProductionStatus(
             'D40 Montaj: Çalışma Süreci',
-            'https://drive.google.com/file/d/1nvm4eO_iS84YbMwoy4l41eURxOtkZpeQ/preview'
+            'https://drive.google.com/file/d/1RE4bYT_C_FQ5Icu_vGrAag9BVSwzAVp4/preview'
         )">
         D40 Montaj
     </button>
 
+    <!-- FONKSİYONEL TEST -->
     <button class="button"
         onclick="changeProductionStatus(
             'Fonksiyonel Test: Çalışma Süreci',
-            'https://drive.google.com/file/d/1GyGejBBU4d2X9JTdaSrCowPnaXFaudPW/preview'
+            'https://drive.google.com/file/d/1xORKGbLpwLmMS3UUQX_kHJ88Eg_RF0vr/preview'
         )">
         Fonksiyonel Test
     </button>
 
+    <!-- PAKETLEME -->
     <button class="button"
         onclick="changeProductionStatus(
             'Paketleme: Çalışma Süreci',
