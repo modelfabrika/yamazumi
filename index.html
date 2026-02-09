@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Montaj Hattı Üretim Durumu</title>
+
     <style>
         body {
             font-family: 'Roboto', Arial, sans-serif;
@@ -21,7 +21,7 @@
             font-weight: 700;
             margin-bottom: 30px;
             text-transform: uppercase;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .container {
@@ -42,36 +42,34 @@
             font-weight: 600;
             text-transform: uppercase;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
         }
 
         .button:hover {
             background: linear-gradient(to right, #ff7e5f, #feb47b);
             transform: translateY(-3px);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 10px rgba(0,0,0,0.3);
         }
 
         .production-status {
             margin-top: 20px;
             font-size: 22px;
             font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
-        /* Video container */
         .video-container {
             margin-top: 40px;
-            width: 80%; /* Video genişliğini sınırlıyoruz */
-            max-width: 900px; /* Maksimum genişlik sınırı */
-            height: auto;
+            width: 80%;
+            max-width: 900px;
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            background-color: #000; /* Video dışındaki alanın arka plan rengi */
-            margin: 0 auto; /* Ortalamak için */
+            padding-bottom: 56.25%;
+            margin-left: auto;
+            margin-right: auto;
+            background: #000;
+            border-radius: 10px;
         }
 
-        /* Aspect ratio for video */
         .video-container iframe {
             position: absolute;
             top: 0;
@@ -79,45 +77,71 @@
             width: 100%;
             height: 100%;
             border: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
         }
-
     </style>
 </head>
 
 <body>
-    <h1>Montaj Hattı</h1>
 
-    <!-- İstasyonlar için Butonlar -->
-    <div class="container">
-        <button class="button" onclick="changeProductionStatus('Ön Montaj: Çalışma Süreci', 'https://drive.google.com/uc?export=view&id=1CMi60ST65J54WspAQtDKjYzYDHeFgYay')">Ön Montaj</button>
-        <button class="button" onclick="changeProductionStatus('D25 Montaj: Çalışma Süreci', 'https://drive.google.com/uc?export=view&id=1RE4bYT_C_FQ5Icu_vGrAag9BVSwzAVp4')">D25 Montaj</button>
-        <button class="button" onclick="changeProductionStatus('D40 Montaj: Çalışma Süreci', 'https://drive.google.com/uc?export=view&id=1RE4bYT_C_FQ5Icu_vGrAag9BVSwzAVp4')">D40 Montaj</button>
-        <button class="button" onclick="changeProductionStatus('Fonksiyonel Test: Çalışma Süreci', 'https://drive.google.com/uc?export=view&id=1xORKGbLpwLmMS3UUQX_kHJ88Eg_RF0vr')">Fonksiyonel Test</button>
-        <button class="button" onclick="changeProductionStatus('Paketleme: Çalışma Süreci', 'https://drive.google.com/uc?export=view&id=1xORKGbLpwLmMS3UUQX_kHJ88Eg_RF0vr')">Paketleme</button>
-    </div>
+<h1>Montaj Hattı</h1>
 
-    <!-- Üretim Durumu Gösterimi -->
-    <div class="production-status" id="status">Üretim durumunu seçiniz.</div>
+<div class="container">
+    <button class="button"
+        onclick="changeProductionStatus(
+        'Ön Montaj: Çalışma Süreci',
+        'https://drive.google.com/file/d/1CMi60ST65J54WspAQtDKjYzYDHeFgYay/preview'
+        )">
+        Ön Montaj
+    </button>
 
-    <!-- Video Linki -->
-    <div class="video-container">
-        <iframe id="video" src="" allow="autoplay" allowfullscreen></iframe>
-    </div>
+    <button class="button"
+        onclick="changeProductionStatus(
+        'D25 Montaj: Çalışma Süreci',
+        'https://drive.google.com/file/d/1RE4bYT_C_FQ5Icu_vGrAag9BVSwzAVp4/preview'
+        )">
+        D25 Montaj
+    </button>
 
-    <script>
-        function changeProductionStatus(status, videoUrl) {
-            // Üretim durumu metnini güncelle
-            document.getElementById('status').innerText = status;
+    <button class="button"
+        onclick="changeProductionStatus(
+        'D40 Montaj: Çalışma Süreci',
+        'https://drive.google.com/file/d/1RE4bYT_C_FQ5Icu_vGrAag9BVSwzAVp4/preview'
+        )">
+        D40 Montaj
+    </button>
 
-            // Video bağlantısını güncelle
-            const videoFrame = document.getElementById('video');
-            videoFrame.src = videoUrl;
-        }
-    </script>
+    <button class="button"
+        onclick="changeProductionStatus(
+        'Fonksiyonel Test: Çalışma Süreci',
+        'https://drive.google.com/file/d/1xORKGbLpwLmMS3UUQX_kHJ88Eg_RF0vr/preview'
+        )">
+        Fonksiyonel Test
+    </button>
+
+    <button class="button"
+        onclick="changeProductionStatus(
+        'Paketleme: Çalışma Süreci',
+        'https://drive.google.com/file/d/1xORKGbLpwLmMS3UUQX_kHJ88Eg_RF0vr/preview'
+        )">
+        Paketleme
+    </button>
+</div>
+
+<div class="production-status" id="status">
+    Üretim durumunu seçiniz.
+</div>
+
+<div class="video-container">
+    <iframe id="video" allowfullscreen></iframe>
+</div>
+
+<script>
+    function changeProductionStatus(status, videoUrl) {
+        document.getElementById("status").innerText = status;
+        document.getElementById("video").src = videoUrl;
+    }
+</script>
+
 </body>
-
 </html>
-
-
