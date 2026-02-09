@@ -49,7 +49,6 @@
         .button:hover {
             background: linear-gradient(to right, #ff7e5f, #feb47b);
             transform: translateY(-3px);
-            box-shadow: 0 6px 10px rgba(0,0,0,0.3);
         }
 
         .production-status {
@@ -59,25 +58,18 @@
         }
 
         .video-container {
-            margin-top: 40px;
-            width: 80%;
+            width: 90%;
             max-width: 900px;
-            position: relative;
-            padding-bottom: 56.25%;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 40px auto 0;
             background: #000;
             border-radius: 10px;
+            overflow: hidden;
         }
 
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        video {
             width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 10px;
+            height: auto;
+            display: block;
         }
     </style>
 </head>
@@ -88,42 +80,27 @@
 
 <div class="container">
     <button class="button"
-        onclick="changeProductionStatus(
-        'Ön Montaj: Çalışma Süreci',
-        'https://drive.google.com/file/d/1CMi60ST65J54WspAQtDKjYzYDHeFgYay/preview'
-        )">
+        onclick="changeProductionStatus('Ön Montaj: Çalışma Süreci', 'videos/on-montaj.mp4')">
         Ön Montaj
     </button>
 
     <button class="button"
-        onclick="changeProductionStatus(
-        'D25 Montaj: Çalışma Süreci',
-        'https://drive.google.com/file/d/1RE4bYT_C_FQ5Icu_vGrAag9BVSwzAVp4/preview'
-        )">
+        onclick="changeProductionStatus('D25 Montaj: Çalışma Süreci', 'videos/d25-montaj.mp4')">
         D25 Montaj
     </button>
 
     <button class="button"
-        onclick="changeProductionStatus(
-        'D40 Montaj: Çalışma Süreci',
-        'https://drive.google.com/file/d/1RE4bYT_C_FQ5Icu_vGrAag9BVSwzAVp4/preview'
-        )">
+        onclick="changeProductionStatus('D40 Montaj: Çalışma Süreci', 'videos/d40-montaj.mp4')">
         D40 Montaj
     </button>
 
     <button class="button"
-        onclick="changeProductionStatus(
-        'Fonksiyonel Test: Çalışma Süreci',
-        'https://drive.google.com/file/d/1xORKGbLpwLmMS3UUQX_kHJ88Eg_RF0vr/preview'
-        )">
+        onclick="changeProductionStatus('Fonksiyonel Test: Çalışma Süreci', 'videos/fonksiyonel-test.mp4')">
         Fonksiyonel Test
     </button>
 
     <button class="button"
-        onclick="changeProductionStatus(
-        'Paketleme: Çalışma Süreci',
-        'https://drive.google.com/file/d/1xORKGbLpwLmMS3UUQX_kHJ88Eg_RF0vr/preview'
-        )">
+        onclick="changeProductionStatus('Paketleme: Çalışma Süreci', 'videos/paketleme.mp4')">
         Paketleme
     </button>
 </div>
@@ -133,13 +110,17 @@
 </div>
 
 <div class="video-container">
-    <iframe id="video" allowfullscreen></iframe>
+    <video id="video" controls autoplay muted></video>
 </div>
 
 <script>
     function changeProductionStatus(status, videoUrl) {
         document.getElementById("status").innerText = status;
-        document.getElementById("video").src = videoUrl;
+
+        const video = document.getElementById("video");
+        video.src = videoUrl;
+        video.load();
+        video.play();
     }
 </script>
 
