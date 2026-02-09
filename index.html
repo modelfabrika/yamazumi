@@ -62,8 +62,9 @@
             max-width: 900px;
             margin: 40px auto 0;
             background: #000;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
         }
 
         video {
@@ -80,27 +81,42 @@
 
 <div class="container">
     <button class="button"
-        onclick="changeProductionStatus('Ön Montaj: Çalışma Süreci', 'videos/on-montaj.mp4')">
+        onclick="changeProductionStatus(
+            'Ön Montaj: Çalışma Süreci',
+            'videos/on-montaj.mp4'
+        )">
         Ön Montaj
     </button>
 
     <button class="button"
-        onclick="changeProductionStatus('D25 Montaj: Çalışma Süreci', 'videos/d25-montaj.mp4')">
+        onclick="changeProductionStatus(
+            'D25 Montaj: Çalışma Süreci',
+            'videos/d25-montaj.mp4'
+        )">
         D25 Montaj
     </button>
 
     <button class="button"
-        onclick="changeProductionStatus('D40 Montaj: Çalışma Süreci', 'videos/d40-montaj.mp4')">
+        onclick="changeProductionStatus(
+            'D40 Montaj: Çalışma Süreci',
+            'videos/d40-montaj.mp4'
+        )">
         D40 Montaj
     </button>
 
     <button class="button"
-        onclick="changeProductionStatus('Fonksiyonel Test: Çalışma Süreci', 'videos/fonksiyonel-test.mp4')">
+        onclick="changeProductionStatus(
+            'Fonksiyonel Test: Çalışma Süreci',
+            'videos/fonksiyonel-test.mp4'
+        )">
         Fonksiyonel Test
     </button>
 
     <button class="button"
-        onclick="changeProductionStatus('Paketleme: Çalışma Süreci', 'videos/paketleme.mp4')">
+        onclick="changeProductionStatus(
+            'Paketleme: Çalışma Süreci',
+            'videos/paketleme.mp4'
+        )">
         Paketleme
     </button>
 </div>
